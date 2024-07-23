@@ -1,0 +1,53 @@
+{
+    "uuid": "87222e92-a2bc-452b-a50c-a34c534c8c68",
+    "lastMigration": 28,
+    "name": "Nothing",
+    "endpointPrefix": "",
+    "latency": 0,
+    "port": 5008,
+    "hostname": "",
+    "folders": [],
+   
+    "rootChildren": [
+        {
+            "type": "route",
+            "uuid": "28028d36-a70b-4ad1-bf6b-d87a85af3298"
+        },
+        {
+            "type": "route",
+            "uuid": "56632bc8-df3c-40ba-b760-a36dc65dd429"
+        }
+    ],
+    "proxyMode": false,
+    "proxyHost": "",
+    "proxyRemovePrefix": false,
+    "tlsOptions": {
+        "enabled": false,
+        "type": "CERT",
+        "pfxPath": "",
+        "certPath": "",
+        "keyPath": "",
+        "caPath": "",
+        "passphrase": ""
+    },
+    "cors": true,
+    "headers": [
+        {
+            "key": "Content-Type",
+            "value": "application/json"
+        }
+    ],
+    "proxyReqHeaders": [
+        {
+            "key": "",
+            "value": ""
+        }
+    ],
+    "proxyResHeaders": [
+        {
+            "key": "",
+            "value": ""
+        }
+    ],
+    "data": []
+}
