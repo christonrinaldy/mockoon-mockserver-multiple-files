@@ -1,0 +1,67 @@
+{
+    "routes": [
+        {
+            "uuid": "28028d36-a70b-4ad1-bf6b-d87a85af3298",
+            "type": "http",
+            "documentation": "",
+            "method": "get",
+            "endpoint": "my-inventory/items/mine",
+            "responses": [
+                {
+                    "uuid": "1dbcd9d4-7c2f-405d-bd7a-97b41f81a17d",
+                    "body": "{\r\n  \"status\": true,\r\n  \"statusCode\": 200,\r\n  \"data\": [\r\n    {\r\n      \"id\": 1,\r\n      \"foo\": \"bar\"\r\n    },\r\n    {\r\n      \"id\": 2,\r\n      \"foo\": \"doe\"\r\n    }\r\n  ]\r\n}",
+                    "latency": 0,
+                    "statusCode": 200,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [
+                        {
+                            "target": "header",
+                            "modifier": "Authorization",
+                            "value": "",
+                            "invert": true,
+                            "operator": "null"
+                        }
+                    ],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": true,
+                    "crudKey": "id"
+                },
+                {
+                    "uuid": "607abcde-4da5-4aa0-9d67-e54d73bfcac2",
+                    "body": "{\n  message: \"Forbidden\"\n}",
+                    "latency": 0,
+                    "statusCode": 403,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [
+                        {
+                            "target": "header",
+                            "modifier": "Authorization",
+                            "value": "",
+                            "invert": false,
+                            "operator": "null"
+                        }
+                    ],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": false,
+                    "crudKey": "id"
+                }
+            ],
+            "enabled": true,
+            "responseMode": null
+        }
+    ]
+}

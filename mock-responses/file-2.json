@@ -1,0 +1,86 @@
+{
+    "routes": [
+        {
+            "uuid": "56632bc8-df3c-40ba-b760-a36dc65dd429",
+            "type": "http",
+            "documentation": "Create Order",
+            "method": "post",
+            "endpoint": "orders/create",
+            "responses": [
+                {
+                    "uuid": "aa3dd414-2589-4167-a1a2-eb09aec2c0f7",
+                    "body": "{\n  \"status\": 200,\n  \"message\": \"Order Created\"\n}",
+                    "latency": 0,
+                    "statusCode": 200,
+                    "label": "",
+                    "headers": [
+                        {
+                            "key": "",
+                            "value": ""
+                        }
+                    ],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [
+                        {
+                            "target": "body",
+                            "modifier": "item_id",
+                            "value": "",
+                            "invert": true,
+                            "operator": "null"
+                        },
+                        {
+                            "target": "body",
+                            "modifier": "count",
+                            "value": "",
+                            "invert": true,
+                            "operator": "null"
+                        },
+                        {
+                            "target": "header",
+                            "modifier": "Authorization",
+                            "value": "",
+                            "invert": true,
+                            "operator": "null"
+                        }
+                    ],
+                    "rulesOperator": "AND",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": true,
+                    "crudKey": "id"
+                },
+                {
+                    "uuid": "a48153b0-28c6-46ee-815e-ef765e247077",
+                    "body": "{\n  \"status\": 403,\n  \"message\": \"Forbidden\"\n}",
+                    "latency": 0,
+                    "statusCode": 403,
+                    "label": "No authorizaton found",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [
+                        {
+                            "target": "header",
+                            "modifier": "Authorization",
+                            "value": "",
+                            "invert": false,
+                            "operator": "null"
+                        }
+                    ],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": false,
+                    "crudKey": "id"
+                }
+            ],
+            "enabled": true,
+            "responseMode": null
+        }
+    ]
+}
